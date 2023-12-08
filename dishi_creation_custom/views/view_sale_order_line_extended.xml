@@ -18,7 +18,7 @@
                 <xpath expr="//field[@name='order_line']/tree//field[@name='tax_id']" position="before">
                     <field name="commission_amount" widget="float_time" options='{"precision": 4}'/>
                 </xpath>
-                <xpath expr="//field[@name='order_line']/tree//field[@name='purchase_price']" position="after">
+                <xpath expr="//field[@name='order_line']/tree//field[@name='tax_id']" position="after">
                     <field name="fx_rates" options='{"precision": 4}'/>
                 </xpath>
 
