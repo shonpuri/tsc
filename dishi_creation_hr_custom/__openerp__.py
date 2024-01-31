@@ -11,6 +11,7 @@
     'data': [
             'security/ir.model.access.csv',
             'data/employee_seq.xml',
+            'data/group_data.xml',
             'views/view_hr_performance_management.xml',
     ],
     'test': [],
