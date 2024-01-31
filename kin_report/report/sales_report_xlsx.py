@@ -24,7 +24,10 @@ class SalesReportWriter(ReportXlsx):
 
         if not end_date:
             end_date = datetime.today().strftime('%Y-%m-%d')
-
+        # added by shon
+        # sale_order_line.margin,
+        # sale_order_line.fx_rates,
+        # sale_order_line.commission_value,
         sql_statement = """
             SELECT
               row_number() over(order by sale_order_line.date_order) as sn,
@@ -37,7 +40,7 @@ class SalesReportWriter(ReportXlsx):
               sale_order_line.purchase_price,
               sale_order_line.discount,
               sale_order_line.discount_amt,
-              sale_order_line.margin,
+              sale_order_line.margin, 
               sale_order_line.fx_rates,
               sale_order_line.commission_value,
               sale_order_line.commission_amount,
@@ -144,7 +147,7 @@ class SalesReportWriter(ReportXlsx):
             sales_report_worksheet.write(row, 15, list_dict['qty_to_invoice'], cell_wrap_format)
             sales_report_worksheet.write(row, 16, list_dict['qty_invoiced'], cell_wrap_format)
             sales_report_worksheet.write(row, 17, list_dict['qty_delivered'], cell_wrap_format)
-            sales_report_worksheet.write(row, 18, list_dict['fx_rates'], cell_wrap_format)
+            sales_report_worksheet.write(row, 18, list_dict['fx_rates'], cell_wrap_format)  
             sales_report_worksheet.write(row, 19, list_dict['commission_value'], cell_wrap_format)
             sales_report_worksheet.write(row, 20, list_dict['commission_amount'], cell_wrap_format)
             row += 1
